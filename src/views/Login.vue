@@ -2,10 +2,11 @@
   <div class="container">
     <img src="../assets/lokalizi.png" alt="" />
     <div class="formulario">
-      <form @onSubmit.prevent="">
-        <input type="email" />
-        <input type="password" />
-        <button>Login</button>
+      <form @submit.prevent="login">
+        <input type="email" v-model="email"/>
+        <input type="password" v-model="password"/>
+        <p v-if="errMsg">{{ errMsg }}</p>
+        <button type="submit">Login</button>
       </form>
       <div class="midias">
         <ul>
@@ -15,7 +16,7 @@
         </ul>
       </div>
       <div class="dificuldade">
-        <p>Dificuldade de logar? Clique Aqui</p>
+        <p>Dificuldade de logar? <router-link to="/register">Clique Aqui</router-link></p>
       </div>
       <div class="cadastre-se">
         <p>Não possui conta? Crie Agora</p>
@@ -25,7 +26,55 @@
 </template>
 
 <script>
-export default {};
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+
+export default {
+    data() {
+        return {
+            email:'',
+            password:'',
+            errMsg: ''
+
+        }
+    },
+    methods: {
+        login(){
+              const auth = getAuth()
+              signInWithEmailAndPassword(auth, this.email, this.password)
+                .then((data) => {
+                    console.log("Você logou com Sucesso!")
+
+                    console.log(auth.currentUser)
+
+                    this.$router.push({name: 'home'}) 
+                    
+                })
+                .catch((error) => {
+                  console.log(error)
+                  switch(error.code){
+                    case "auth/invalid-email":
+                      this.errMsg = "Email Invalido"
+                      break;
+                    case "auth/user-not-found":
+                      this.errMsg = "Usuario Não Encontrado"
+                      break;
+                    case "auth/wrong-password":
+                      this.errMsg = "Senha Incorreta"
+                      break;
+                    default:
+                      this.errMsg = "Email ou senha incorretos"
+                      break;
+                  }
+                  
+
+                })
+
+        },
+        signInWithGoogle(){
+
+        }
+    },
+}
 </script>
 
 <style scoped>

@@ -11,14 +11,40 @@
       <div class="mapa">
         <h1>Mapinha</h1>
       </div>
+      <div class="logout">
+        <button @click.prevent="logout" v-if="isLoggedIn">Logout</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 export default {
   data() {
-    return {};
+    return {
+      isLoggedIn: false
+
+    };
+  },
+  mounted() {
+    let auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if(user){
+        this.isLoggedIn = true;
+      }else{
+        this.isLoggedIn = false
+      }
+    })
+    
+  },
+  methods: {
+    logout(){
+      let auth = getAuth();
+      signOut(auth).then(() => {
+        this.$router.push({name: "login"})
+      })
+    }
   },
 };
 </script>
