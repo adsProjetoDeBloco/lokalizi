@@ -5,13 +5,13 @@
             <input type="email" v-model="email"/>
             <input type="password" v-model="password" />
             <button @click.prevent="register">Cadastrar</button>
-            <button @click="singInWithGoogle">Cadastre-se com Google</button>
         </form>
+            <button @click.prevent="signInWithGoogle">Cadastre-se com Google</button>
     </div>    
 </template>
 
 <script>
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 export default {
     data() {
         return {
@@ -34,7 +34,14 @@ export default {
 
         },
         signInWithGoogle(){
-
+            const provider = new GoogleAuthProvider()
+            signInWithPopup(getAuth(), provider)
+                .then((result) => {
+                    console.log(result);
+                    this.$router.push({name: 'home'})
+                }).catch((err) => {
+                    console.log(err)
+                })
         }
     },
 }

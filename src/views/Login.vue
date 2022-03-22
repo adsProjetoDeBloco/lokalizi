@@ -3,30 +3,34 @@
     <img src="../assets/lokalizi.png" alt="" />
     <div class="formulario">
       <form @submit.prevent="login">
-        <input type="email" v-model="email"/>
-        <input type="password" v-model="password"/>
-        <p v-if="errMsg">{{ errMsg }}</p>
-        <button type="submit">Login</button>
+        <input type="email" v-model="email" placeholder="Email"/>
+        <input type="password" v-model="password" placeholder="Senha"/>
+        <p class="alert" v-if="errMsg">{{ errMsg }}</p>
+        <button class="bt-login" type="submit">Login</button>
       </form>
       <div class="midias">
         <ul>
-          <li>Facebook</li>
-          <li>Google</li>
-          <li>Outlook</li>
+          <li><img src="../assets/logos_facebook.png" alt="" @click.prevent="loginWithFacebook"></li>
+          <li><img src="../assets/logos_google-icon.png" alt="" @click.prevent="loginWithGoolge"></li>
+          <li><img src="../assets/vscode-icons_file-type-outlook.png" alt="" @click.prevent="loginWithOutlook"></li>
         </ul>
       </div>
       <div class="dificuldade">
         <p>Dificuldade de logar? <router-link to="/register">Clique Aqui</router-link></p>
       </div>
       <div class="cadastre-se">
-        <p>Não possui conta? Crie Agora</p>
+        <p> Não possui conta? <router-link to="/register"> Crie Agora </router-link></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth,
+ signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider  } from 'firebase/auth'
 
 export default {
     data() {
@@ -70,8 +74,25 @@ export default {
                 })
 
         },
-        signInWithGoogle(){
-
+        loginWithGoolge(){
+            const provider = new GoogleAuthProvider()
+            signInWithPopup(getAuth(), provider)
+                .then((result) => {
+                    console.log(result);
+                    this.$router.push({name: 'home'})
+                }).catch((err) => {
+                    console.log(err)
+                })
+        },
+        loginWithFacebook(){
+            const provider = new FacebookAuthProvider()
+            signInWithPopup(getAuth(), provider)
+                .then((result) => {
+                    console.log(result);
+                    this.$router.push({name: 'home'})
+                }).catch((err) => {
+                    console.log(err)
+                })
         }
     },
 }
@@ -79,6 +100,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400&display=swap");
+
 
 .login-page {
   display: flex;
@@ -108,7 +130,7 @@ input {
   background: rgba(240, 114, 65, 0.61);
   border: none;
 }
-button {
+.bt-login {
   width: 153px;
   height: 60px;
   border-radius: 15px;
@@ -121,10 +143,26 @@ button {
   font-style: normal;
   margin-top: 70px;
 }
+
 ul {
   display: flex;
+  list-style-type: none;
+  justify-content: center;
+  margin-top: 14px;
+  margin-bottom: 73px;
 }
+li{
+  margin: 8.66px;
+  cursor: pointer;
+}
+
 p {
   font-family: "Advent Pro";
+  color: #FFFFFF;
+}
+.alert{
+  color:red;
+  font-weight: bolder;
+  font-size: 20px;
 }
 </style>

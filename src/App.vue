@@ -43,12 +43,15 @@ export default {
 
 .bg-login {
   background-image: url("./assets/login-background.png");
-  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
+  
 }
 .bg-home {
   background-image: url("./assets/backgroundpg2.png");
-  background-size: 100%;
+  background-size: cover;
+  background-attachment: fixed; /*Deixa o background fixo para o tamanho da tela*/
   background-repeat: no-repeat;
 }
 </style>
