@@ -4,7 +4,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: Login
   },
@@ -13,7 +13,7 @@ const routes = [
     name: 'home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     meta:{
-      requiresAuth: false //trocado para falso para facilitar o desenvolvimento
+      requiresAuth: true //trocado para falso para facilitar o desenvolvimento
     }
   },
   {
@@ -21,6 +21,7 @@ const routes = [
     name: 'register',
     component: () => import(/* webpackChunkName: "home" */ '../views/Register.vue')
   },
+ 
 ]
 
 const router = createRouter({
@@ -49,7 +50,7 @@ router.beforeEach( async (to, from, next) =>{
     }else{
       //caso não esteja logado retornar para a pagina de login
       alert("Faça Login")
-      next("/login")
+      next("/")
     }
   }else{
     next()

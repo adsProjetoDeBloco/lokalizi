@@ -1,4 +1,10 @@
 <template>
+<nav>
+
+  <router-link to="/">Login</router-link>
+  <router-link to="/home">Home</router-link>
+  <router-link to="/register">Registre-se</router-link>
+</nav>
   <router-view />
 </template>
 
@@ -7,8 +13,8 @@
 export default {
   methods: {
     handleStyles() {
-      // Se tem na rota /login a class do body é alterada
-      if (["/login"].includes(this.$route.path))
+      // Se tem na rota / a class do body é alterada
+      if (["/"].includes(this.$route.path))
         document.body.className = "bg-login";
       else if (["/home"].includes(this.$route.path))
         document.body.className = "bg-home";
@@ -34,6 +40,11 @@ export default {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+nav{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

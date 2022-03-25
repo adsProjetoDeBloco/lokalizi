@@ -2,15 +2,17 @@
   <div class="container">
     <div class="localiza">
       <div class="local">
-        <p>Bem Vindo {{ $store.state.user.name }}</p>
-        <h1>Felton Park</h1>
-        <p>imaginzinha da distancia</p>
+        <h1>{{ local }}</h1>
+        <h1 v-show="!local">Selecione seu destino</h1>
       </div>
       <div class="destino">
-        <h1>5th Avenue</h1>
+        <h1>{{ destino }}</h1>
       </div>
       <div class="mapa">
-        <h1>Mapinha</h1>
+        <div class="mini-mapa">
+          <img src="../../static/union.png" alt="" srcset="">
+              <iframe id="google-maps" src="https://maps.google.com/maps?q=R.%20do%20Ros%C3%A1rio%2C%20128%20-%20Centro%20rio%20de%20janeiro&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
       </div>
       <div class="logout">
         <button @click.prevent="logout" v-if="isLoggedIn">Logout</button>
@@ -24,7 +26,9 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
 export default {
   data() {
     return {
-      isLoggedIn: false
+      isLoggedIn: false,
+      local:'',
+      destino:''
 
     };
   },
@@ -68,9 +72,21 @@ export default {
   color: #000000;
 }
 .mapa {
-  border: 10px solid black;
-  width: 200px;
-  height: 200px;
-  margin-left: 190px;
+  display: flex;
+  
+  width: 100%;
+  justify-content: flex-end;
+  
+}
+.mini-mapa {
+  display: flex;
+  justify-content: flex-end;
+  
+}
+iframe{
+  position: absolute;
+  margin-top:20px;
+  width: 120px;
+  height: 230px;
 }
 </style>

@@ -90,6 +90,23 @@ export default {
   align-items: center;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 50px auto;
+  align-items: center;
+}
+
+input{
+  background: rgba(240, 114, 65, 0.61);
+  border-radius: 15px;
+  width: 275px;
+  height: 55px;
+  border: none;
+  margin: 41px auto;
+}
+
 .login {
   display: flex;
   flex-direction: column;

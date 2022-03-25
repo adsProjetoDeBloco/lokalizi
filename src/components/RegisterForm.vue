@@ -42,6 +42,11 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -65,6 +70,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: #000;
 }
 input {
   display: block;
@@ -93,5 +99,6 @@ button {
   border: 1px solid #c4c4c4;
   border-radius: 10px;
   margin-left: 31px;
+  color: #FFFFFF;
 }
 </style>

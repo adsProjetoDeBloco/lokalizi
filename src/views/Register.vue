@@ -55,4 +55,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+p{
+  font-family: 'Montserrat', sans-serif;
+  color:#000;
+}
+
 </style>
