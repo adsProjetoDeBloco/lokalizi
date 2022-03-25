@@ -2,6 +2,7 @@
   <div class="container">
     <div class="localiza">
       <div class="local">
+        <p>Bem Vindo {{ $store.state.user.name }}</p>
         <h1>Felton Park</h1>
         <p>imaginzinha da distancia</p>
       </div>

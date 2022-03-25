@@ -12,6 +12,8 @@ export default {
         document.body.className = "bg-login";
       else if (["/home"].includes(this.$route.path))
         document.body.className = "bg-home";
+      else if (["/register"].includes(this.$route.path))
+        document.body.className = "bg-register";
     },
   },
   // Executa o metodo assim que montado
@@ -50,6 +52,12 @@ export default {
 }
 .bg-home {
   background-image: url("./assets/backgroundpg2.png");
+  background-size: cover;
+  background-attachment: fixed; /*Deixa o background fixo para o tamanho da tela*/
+  background-repeat: no-repeat;
+}
+.bg-register {
+  background-image: none;
   background-size: cover;
   background-attachment: fixed; /*Deixa o background fixo para o tamanho da tela*/
   background-repeat: no-repeat;
