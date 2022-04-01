@@ -1,5 +1,13 @@
 # lokalizi
 
+
+
+
+Packages:
+@fawmi/vue-google-maps'
+
+
+
 ## Project setup
 ```
 npm install

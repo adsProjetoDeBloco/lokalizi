@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-
+import VueGoogleMaps from '@fawmi/vue-google-maps'
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -25,4 +25,9 @@ initializeApp(firebaseConfig);
 createApp(App)
     .use(store)
     .use(router)
+    .use(VueGoogleMaps, {
+      load:{
+        key: 'AIzaSyBe19mgySnJRw_H_1JOu4D6xoU6o97pwbI',
+      }
+    })
     .mount('#app')

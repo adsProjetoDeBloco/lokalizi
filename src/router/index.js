@@ -13,13 +13,18 @@ const routes = [
     name: 'home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     meta:{
-      requiresAuth: true //trocado para falso para facilitar o desenvolvimento
+      requiresAuth: false //trocado para falso para facilitar o desenvolvimento
     }
   },
   {
     path: '/register',
     name: 'register',
     component: () => import(/* webpackChunkName: "home" */ '../views/Register.vue')
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import(/* webpackChunkName: "home" */ '../views/Search.vue')
   },
  
 ]
