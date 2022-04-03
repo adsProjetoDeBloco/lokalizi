@@ -105,6 +105,7 @@ input{
   height: 55px;
   border: none;
   margin: 41px auto;
+  text-align: center;
 }
 
 .login {

@@ -8,22 +8,30 @@
       <div class="destino">
         <h1>{{ destino }}</h1>
       </div>
-      <div class="mapa">
+      <div class="mapa" @click="search">
         <div class="mini-mapa">
           <img src="../../static/union.png" alt="" srcset="">
-              <iframe id="google-maps" src="https://maps.google.com/maps?q=R.%20do%20Ros%C3%A1rio%2C%20128%20-%20Centro%20rio%20de%20janeiro&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+              <iframe @click.prevent="search" id="google-maps" src="https://maps.google.com/maps?q=R.%20do%20Ros%C3%A1rio%2C%20128%20-%20Centro%20rio%20de%20janeiro&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
       </div>
       <div class="logout">
         <button @click.prevent="logout" v-if="isLoggedIn">Logout</button>
       </div>
     </div>
+    <footer>
+      <NaviBar/>
+    </footer>
   </div>
 </template>
 
 <script>
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+import NaviBar from '@/components/NavBarItems.vue'
+
 export default {
+  components:{
+    NaviBar
+  },
   data() {
     return {
       isLoggedIn: false,
@@ -49,6 +57,9 @@ export default {
       signOut(auth).then(() => {
         this.$router.push({name: "login"})
       })
+    },
+    search(){
+      this.$router.push({name: 'search'})
     }
   },
 };
@@ -88,5 +99,8 @@ iframe{
   margin-top:20px;
   width: 120px;
   height: 230px;
+}
+footer{
+  margin-top: 200px
 }
 </style>

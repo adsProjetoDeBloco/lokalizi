@@ -46,17 +46,22 @@ export default {
 *{
   font-family: 'Montserrat', sans-serif;
 }
+.container{
+  display: flex;
+  width: 400px;
+  margin: 10px auto;
+}
 
 form {
   display: flex;
   flex-direction: column;
+  
   width: 100%;
   margin: 50px auto;
 }
 .nome-sobrenome {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   margin: 20px;
 }
 .email-senha {
@@ -81,11 +86,12 @@ input {
   box-sizing: border-box;
 }
 .in-nome {
-  width: 150px;
+  width: 155px;
   height: 36px;
+  margin-right: 45px;
 }
 .in-sobrenome {
-  width: 150px;
+  width: 155px;
   height: 36px;
 }
 .in-email-pass {

@@ -1,11 +1,5 @@
 <template>
-<nav>
 
-  <router-link to="/">Login</router-link>
-  <router-link to="/home">Home</router-link>
-  <router-link to="/register">Registre-se</router-link>
-  <router-link to="/search">Search</router-link>
-</nav>
   <router-view />
 </template>
 
@@ -21,6 +15,8 @@ export default {
         document.body.className = "bg-home";
       else if (["/register"].includes(this.$route.path))
         document.body.className = "bg-register";
+      else if (["/search"].includes(this.$route.path))
+        document.body.className = "bg-search";
     },
   },
   // Executa o metodo assim que montado
@@ -74,4 +70,8 @@ nav{
   background-attachment: fixed; /*Deixa o background fixo para o tamanho da tela*/
   background-repeat: no-repeat;
 }
+.bg-search{
+  background-image: none;
+}
+
 </style>
