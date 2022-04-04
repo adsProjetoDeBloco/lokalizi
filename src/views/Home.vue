@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="logout">
-        <button @click.prevent="logout" v-if="isLoggedIn">Logout</button>
+        <button class="bt-logout" @click.prevent="logout" v-if="isLoggedIn">Logout</button>
       </div>
     </div>
       <NaviBar class="navegador"/>
@@ -66,6 +66,19 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
 
+.bt-logout {
+  width: 153px;
+  height: 60px;
+  border-radius: 15px;
+  background: rgba(96, 24, 72, 0.86);
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 29px;
+  font-family: "Advent Pro";
+  font-style: normal;
+  margin-top: 70px;
+}
 .local {
   width: 311px;
   height: 81.13px;

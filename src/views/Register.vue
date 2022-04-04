@@ -2,6 +2,7 @@
   <div class="container">
     <lokalizi-logo></lokalizi-logo>
     <p>Registe-se e comece utlizar agora!</p>
+    <p v-show="msgErro" style="color: red">{{ msgErro }}</p>
     <register-form :submit="register" :user="user"></register-form>
     <p>Ou utilize suas redes sociais para se cadastrar</p>
     <social-buttons></social-buttons>
@@ -31,11 +32,15 @@ export default {
         secondName: "",
         email: "",
         password: "",
-      }
+      },
+      msgErro: ''
     };
   },
   methods: {
     register() {
+      if(!this.user.name || !this.user.secondName){
+        this.msgErro = 'Preencha nome e sobrenome'
+      }
       this.$store.commit('CADASTRAR_NOVO_USUARIO', this.user)
     },
     

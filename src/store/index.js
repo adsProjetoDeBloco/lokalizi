@@ -26,8 +26,14 @@ export default createStore({
           state.user.secondName = user.secondName
         })
         .catch((error) => {
+          const erro = error.code
           console.log(error.code)
-          alert(error.message)
+          if(erro === 'auth/email-already-in-use'){
+            alert("EMAIL CADASTRADO")
+          }else{
+
+            alert('PREENCHA TODOS OS CAMPOS')
+          }
         })
     }
   },
