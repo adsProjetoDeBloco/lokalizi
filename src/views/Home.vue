@@ -115,12 +115,20 @@ iframe{
     width: 100%;
   }
 }
-@media (min-width: 390px) and (max-width: 411px) {
+@media (min-width: 390px) and (max-width: 392px) {
 
   .navegador{
     position: absolute;
     top: 784px;
     width: 100%;
+  }
+}
+@media (min-width: 393px) and (max-width: 411px) {
+
+  .navegador{
+    position: absolute;
+    top: 791px;
+    width: 100.1%;
   }
 }
 @media (min-width: 412px) and (max-width: 413px) {
@@ -135,6 +143,14 @@ iframe{
   .navegador{
     position: absolute;
     top: 840px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 819px) {
+
+  .navegador{
+    position: absolute;
+    top: 964px;
     width: 100%;
   }
 }

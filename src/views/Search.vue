@@ -138,7 +138,7 @@ p {
     width: 100%;
   }
 }
-@media (min-width: 390px) and (max-width: 413px) {
+@media (min-width: 390px) and (max-width: 392px) {
   input {
     left: 20.5px;
     top: 70px;
@@ -151,6 +151,14 @@ p {
     position: absolute;
     top: 784px;
     width: 100%;
+  }
+}
+@media (min-width: 393px) and (max-width: 411px) {
+
+  .navegador{
+    position: absolute;
+    top: 791px;
+    width: 100.1%;
   }
 }
 @media (min-width: 412px) and (max-width: 413px) {
@@ -216,7 +224,7 @@ p {
     top: 120px;
   }
 }
-@media (min-width: 740px) and (max-width: 819px) {
+@media (min-width: 740px) and (max-width: 767px) {
   input {
     left: 210.5px;
     top: 70px;
@@ -226,6 +234,14 @@ p {
     top: 120px;
   }
   
+}
+@media (min-width: 768px) and (max-width: 819px) {
+
+  .navegador{
+    position: absolute;
+    top: 964px;
+    width: 100%;
+  }
 }
 @media (min-width: 820px) and (max-width: 960px) {
     input {
