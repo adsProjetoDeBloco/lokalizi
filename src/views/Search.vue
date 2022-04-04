@@ -1,7 +1,7 @@
 <template>
   <GoogleMap
     api-key="AIzaSyBe19mgySnJRw_H_1JOu4D6xoU6o97pwbI"
-    style="width: 102%; height: 105vh"
+    style="width: 100%; height: 100vh"
     :center="center"
     :zoom="15"
   >
@@ -21,7 +21,7 @@
     </div>
     <Marker :options="{ position: center }"> </Marker>
 
-    <NaviBar class="teste"/>
+    <NaviBar class="navegador"/>
   </GoogleMap>
 </template>
 
@@ -102,13 +102,79 @@ button {
 p {
   margin-left: 15px;
 }
-.teste{
+.navegador{
   position: absolute;
   top: 782px;
   width: 100%;
 }
 
 /*here starts the media queri*/
+@media (min-width: 360px) and (max-width: 389px) {
+  input {
+    left: 0.5px;
+    top: 70px;
+  }
+  .botoes {
+    top: 120px;
+  }
+  .navegador{
+    position: absolute;
+    top: 680px;
+    width: 100%;
+  }
+}
+@media (min-width: 389px) and (max-width: 389px) {
+  input {
+    left: 10.5px;
+    top: 70px;
+  }
+  .botoes {
+    
+    top: 120px;
+  }
+  .navegador{
+    position: absolute;
+    top: 616px;
+    width: 100%;
+  }
+}
+@media (min-width: 390px) and (max-width: 413px) {
+  input {
+    left: 20.5px;
+    top: 70px;
+  }
+  .botoes {
+    left: 6.5px;
+    top: 120px;
+  }
+  .navegador{
+    position: absolute;
+    top: 784px;
+    width: 100%;
+  }
+}
+@media (min-width: 412px) and (max-width: 413px) {
+  .navegador{
+    position: absolute;
+    top: 855px;
+    width: 100%;
+  }
+}
+@media (min-width: 414px) and (max-width: 434px) {
+  input {
+    left: 20.5px;
+    top: 70px;
+  }
+  .botoes {
+    left: 6.5px;
+    top: 120px;
+  }
+  .navegador{
+    position: absolute;
+    top: 840px;
+    width: 100%;
+  }
+}
 @media (min-width: 435px) and (max-width: 509px) {
   input {
     left: 58.5px;
@@ -150,7 +216,7 @@ p {
     top: 120px;
   }
 }
-@media (min-width: 740px) and (max-width: 960px) {
+@media (min-width: 740px) and (max-width: 819px) {
   input {
     left: 210.5px;
     top: 70px;
@@ -158,6 +224,22 @@ p {
   .botoes {
     left: 196.5px;
     top: 120px;
+  }
+  
+}
+@media (min-width: 820px) and (max-width: 960px) {
+    input {
+    left: 210.5px;
+    top: 70px;
+  }
+  .botoes {
+    left: 196.5px;
+    top: 120px;
+  } 
+ .navegador{
+    position: absolute;
+    top: 1120px;
+    width: 100%;
   }
 }
 </style>

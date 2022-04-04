@@ -18,9 +18,7 @@
         <button @click.prevent="logout" v-if="isLoggedIn">Logout</button>
       </div>
     </div>
-    <footer>
-      <NaviBar/>
-    </footer>
+      <NaviBar class="navegador"/>
   </div>
 </template>
 
@@ -100,7 +98,51 @@ iframe{
   width: 120px;
   height: 230px;
 }
-footer{
-  margin-top: 200px
+/*here starts the media queri*/
+@media (min-width: 360px) and (max-width: 389px) {
+
+  .navegador{
+    position: absolute;
+    top: 680px;
+    width: 100%;
+  }
+}
+@media (min-width: 375px) and (max-width: 389px) {
+
+  .navegador{
+    position: absolute;
+    top: 616px;
+    width: 100%;
+  }
+}
+@media (min-width: 390px) and (max-width: 411px) {
+
+  .navegador{
+    position: absolute;
+    top: 784px;
+    width: 100%;
+  }
+}
+@media (min-width: 412px) and (max-width: 413px) {
+  .navegador{
+    position: absolute;
+    top: 855px;
+    width: 100%;
+  }
+}
+@media (min-width: 414px) and (max-width: 434px) {
+
+  .navegador{
+    position: absolute;
+    top: 840px;
+    width: 100%;
+  }
+}
+@media (min-width: 820px) and (max-width: 960px) {
+ .navegador{
+    position: absolute;
+    top: 1120px;
+    width: 100%;
+  }
 }
 </style>

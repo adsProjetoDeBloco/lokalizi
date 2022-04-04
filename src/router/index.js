@@ -13,7 +13,7 @@ const routes = [
     name: 'home',
     component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
     meta:{
-      requiresAuth: false //trocado para falso para facilitar o desenvolvimento
+      requiresAuth: true //trocado para falso para facilitar o desenvolvimento
     }
   },
   {
@@ -24,7 +24,10 @@ const routes = [
   {
     path: '/search',
     name: 'search',
-    component: () => import(/* webpackChunkName: "home" */ '../views/Search.vue')
+    component: () => import(/* webpackChunkName: "home" */ '../views/Search.vue'),
+    meta:{
+      requiresAuth: true //trocado para falso para facilitar o desenvolvimento
+    }
   },
  
 ]
