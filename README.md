@@ -4,7 +4,8 @@
 Projeto realizado em grupo pelos estudantes:
 * Anna Grateki (UI, UX - Desing)
 * Thiago Segadães Pace (Scrum Master)
-* Pedro Humberto Gonçalves Cardoso (Programador Full Stack)
+* Pedro Humberto Gonçalves Cardoso (Dev Full Stack)
+* José Macedo (Dev Front-End)
 
 
 <center> <img src="./img/loading.png" style="width: 180px;"> </center>
