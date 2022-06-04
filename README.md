@@ -7,6 +7,7 @@ Projeto realizado em grupo pelos estudantes:
 * Pedro Humberto Gonçalves Cardoso (Dev Full Stack)
 * José Macedo (Dev Front-End)
 
+Obs: Projeto foi feito para ser mobile, deve rodar com orientação mobile 400x850
 
 <center> <img src="./img/loading.png" style="width: 180px;"> </center>
 
